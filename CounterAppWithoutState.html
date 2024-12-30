@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+  </head>
+  <body>
+    <script>
+      function onButtonPress() {
+        const btn = document.getElementById("btn");
+        const currentCount = btn.innerHTML.split(" ")[1];
+        const newCount = parseInt(currentCount) + 1;
+        btn.innerHTML = `Counter ${newCount}`;
+      }
+    </script>
+    <button onclick="onButtonPress()" id="btn">Counter 0</button>
+  </body>
+</html>
