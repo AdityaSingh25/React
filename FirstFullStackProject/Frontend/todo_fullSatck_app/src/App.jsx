@@ -1,9 +1,27 @@
+import { CreateTodo } from "./components/CreateTodo.jsx";
+import { Todos } from "./components/Todos.jsx";
 import { useState } from "react";
 
-function App() {
-  const [count, setCount] = useState(0);
+export default function App() {
+  const [todos, setTodos] = useState([]);
 
-  return <div>Hi there</div>;
+  // fetch("http://localhost:3000/todos").then(async function (res) {
+  //   const json = await res.json();
+  //   setTodos(json.todos);
+  // });
+
+  return (
+    <div>
+      <CreateTodo />
+      <Todos
+        todos={[
+          {
+            title: "Go to Gym",
+            description: "Gym jao",
+            completed: true,
+          },
+        ]}
+      />
+    </div>
+  );
 }
-
-export default App;
